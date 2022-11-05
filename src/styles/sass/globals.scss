@@ -1,0 +1,195 @@
+@use "@/styles/sass/_variables.scss" as variables;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap");
+
+/*##RESET*/
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+textarea {
+  border: 0;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+h1 {
+  font-size: 3rem;
+
+  @media screen and (max-width: 500px) {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-size: 2.5rem;
+}
+h4 {
+  font-size: 2rem;
+}
+
+html {
+  @media screen and (max-width: 400px) {
+    font-size: 0.9rem;
+  }
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: variables.$dark-cyan;
+}
+
+.my-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.icon {
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+.image {
+  max-width: 600px;
+}
+
+@mixin background-section($background-number: 1) {
+  &::before {
+    background-image: url("/assets/images/bg-section-top-desktop-#{$background-number}.svg");
+    background-position: bottom;
+
+    top: -198px;
+
+    @media screen and (max-width: 700px) {
+      & {
+        background-image: url("/assets/images/bg-section-top-mobile-#{$background-number}.svg");
+      }
+    }
+  }
+
+  &::after {
+    background-image: url("/assets/images/bg-section-bottom-desktop-#{$background-number}.svg");
+    bottom: -198px;
+    background-position: top;
+    @media screen and (max-width: 700px) {
+      & {
+        background-image: url("/assets/images/bg-section-bottom-mobile-#{$background-number}.svg");
+      }
+    }
+  }
+}
+
+%background-defaults {
+  &::before,
+  &::after {
+    content: "";
+
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+
+    @media screen and (min-width: 1200px) {
+      & {
+        background-size: 100% 200px;
+      }
+    }
+  }
+}
+
+.section,
+.footer {
+  margin-top: 200px;
+  padding: 100px 0px;
+}
+
+.section {
+  &--background-1 {
+    position: relative;
+    background-color: variables.$pale-blue;
+
+    @extend %background-defaults;
+
+    @include background-section(1);
+  }
+  &--background-2 {
+    position: relative;
+    background-color: variables.$pale-blue;
+
+    @extend %background-defaults;
+
+    @include background-section(1);
+  }
+}
+
+@mixin background-footer() {
+  &::before {
+    content: "";
+    background-image: url("/assets/images/bg-footer-top-desktop.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    height: 200px;
+
+    width: 100%;
+
+    position: absolute;
+    top: -198px;
+
+    z-index: -1;
+
+    @media screen and (min-width: 1200px) {
+      & {
+        background-size: 100% 200px;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      & {
+        background-image: url("/assets/images/bg-footer-top-mobile.svg");
+        background-size: 100% auto;
+      }
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  background-color: variables.$dark-cyan;
+  color: white;
+
+  @include background-footer();
+
+  &__input {
+    border-radius: variables.$border-radius-default;
+    min-height: 48px;
+  }
+  &__socials-container {
+    margin-top: 80px;
+  }
+}

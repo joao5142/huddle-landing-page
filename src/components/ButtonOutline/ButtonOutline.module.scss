@@ -1,0 +1,13 @@
+@use "@/styles/sass/_variables.scss" as variables;
+
+.button-outline {
+  color: variables.$light-pink;
+  border: 1px solid variables.$light-pink;
+  border-radius: 20px;
+  background: transparent;
+  padding: 5px 20px;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}

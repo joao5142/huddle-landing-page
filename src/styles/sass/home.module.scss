@@ -1,0 +1,23 @@
+.header {
+  padding-top: 60px;
+
+  &__logo {
+    max-width: 172px;
+    height: 30px;
+  }
+}
+
+.community-section {
+  &__description {
+    max-width: 700px;
+    margin: 30px auto 40px auto;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+  &__computer-image {
+    width: 80%;
+    display: block;
+    margin: 120px auto;
+  }
+}

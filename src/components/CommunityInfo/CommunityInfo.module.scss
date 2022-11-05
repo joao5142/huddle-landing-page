@@ -1,0 +1,17 @@
+.title {
+  font-size: 6.5rem;
+  @media screen and (max-width: 400px) {
+    & {
+      font-size: 4.5rem;
+      text-align: center;
+    }
+  }
+}
+.text {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #8e9295;
+}
+.image {
+  text-align: left;
+}

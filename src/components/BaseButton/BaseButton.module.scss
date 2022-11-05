@@ -1,0 +1,28 @@
+@use "@/styles/sass/_variables.scss" as variables;
+
+.button {
+  padding: 12px 50px;
+  color: white;
+  background: variables.$pink;
+  font-weight: 600;
+
+  border-radius: variables.$border-radius-default;
+
+  transition: all 0.2s ease-in-out;
+  &--rounded {
+    border-radius: 50px;
+  }
+
+  &--large {
+    padding: 20px 70px;
+
+    @media screen and (max-width: 500px) {
+      padding: 20px 30px;
+    }
+  }
+
+  &:hover {
+    background: variables.$light-pink;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+}
