@@ -1,5 +1,5 @@
 <h1>Projeto Huddle Landing Page</h1>
-<h4>🚀 Landing Page do desafio 1 do Frontend Mentor .</h4>
+<h4>🚀 Landing Page do desafio do Frontend Mentor .</h4>
 
 <h2>🚧 Status do projeto</h2>
 <p>Concluído</p>
